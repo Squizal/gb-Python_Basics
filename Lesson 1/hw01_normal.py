@@ -45,18 +45,17 @@ import math
 
 print('ax**2+b*x+c=0')
 
-a = int(input('Введите a '))
-b = int(input('Введите b '))
-c = int(input('Введите c '))
-d = (b ** 2) - (4 * a * c)
+a = float(input('Введите a '))
+b = float(input('Введите b '))
+c = float(input('Введите c '))
+d = b ** 2 - 4 * a * c
 
 if d > 0:
-    x1 = ((- b) - (d ** 0.5)) / (2 * a)
-    x2 = ((- b) + (d ** 0.5)) / (2 * a)
-    print('X1 =', x1)
-    print('X2 =', x2)
+    x1 = (-b + math.sqrt(d)) / (2 * a)
+    x2 = (-b - math.sqrt(d)) / (2 * a)
+    print("x1 = %.2f \nx2 = %.2f" % (x1, x2))
 elif d == 0:
-    x1 = (- b) / (2 * a)
-    print('Уравнение имеет один корень X = ', x1)
-elif d < 0:
-    print('Уравнение не имеет корней')
+    x = -b / (2 * a)
+    print("x = %.2f" % x)
+else:
+    print("Корней нет")
